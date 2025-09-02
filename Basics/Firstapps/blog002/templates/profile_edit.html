@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Edit Profile{% endblock %}
+{% block content %}
+<div class="card glass p-4 mt-4 mx-auto" style="max-width:700px;">
+  <h3 class="mb-3">Edit Profile</h3>
+  <form method="post">
+    <div class="mb-3"><label class="form-label">Real Name</label><input name="realname" value="{{ user.realname }}" class="form-control bg-black text-light"></div>
+    <div class="mb-3"><label class="form-label">Email</label><input name="email" value="{{ user.email }}" class="form-control bg-black text-light"></div>
+    <div class="mb-3"><label class="form-label">Age</label><input name="age" value="{{ user.age }}" class="form-control bg-black text-light"></div>
+    <div class="mb-3"><label class="form-label">Job</label><input name="job" value="{{ user.job }}" class="form-control bg-black text-light"></div>
+    <div class="mb-3"><label class="form-label">Bio</label><textarea name="bio" class="form-control bg-black text-light">{{ user.bio }}</textarea></div>
+    <div class="mb-3"><label class="form-label">New Password (leave blank to keep current)</label><input type="password" name="password" class="form-control bg-black text-light"></div>
+    <button class="btn btn-outline-light w-100">Save</button>
+  </form>
+</div>
+{% endblock %}

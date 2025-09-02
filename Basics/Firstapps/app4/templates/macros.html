@@ -1,0 +1,71 @@
+<style>
+strong {
+
+	color:red;
+
+}
+
+	
+.terminal-card {
+
+	background-color: #1e1e1e;
+	color: #f8f9fa;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	font-family: 'Courier New', monospace;
+	box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.terminal-header {
+
+	background-color: #0d1b2a;
+	padding: 0.5rem 1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.terminal-header span {
+
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+}
+
+.btn-close-red { background-color: #ff5f56; }
+
+.btn-min-yellow { background-color: #ffbd2e; }
+
+.btn-max-green { background-color: #27c93f; }
+
+.program_lang { 
+	background-color : black;
+	color: white;
+	float:right;
+	border-radius : 10px;
+}
+
+.terminal-body {
+
+	padding: 1rem;
+	white-space: pre-wrap;
+	background-color: #1b263b;
+	color : #f8f9fa;
+}
+</style>
+
+
+{% macro terminal_card(title, body) %}
+<div class="terminal-card my-4">
+	<div class="terminal-header">
+		<span class="btn-close-red"></span>
+		<span class="btn-min-yellow"></span>
+		<span class="btn-max-green"></span>
+		<strong class="ms-2 text-light">{{ title }}</strong>
+	</div>
+	<div class="terminal-body py-0">
+<code>{{ body | safe }}</code>
+	</div>
+</div>
+{% endmacro %}

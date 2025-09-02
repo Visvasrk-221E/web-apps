@@ -1,0 +1,137 @@
+/* Base Styles */
+:root {
+  --bg-dark: #121212;
+  --bg-darker: #0a0a0a;
+  --bg-glass: rgba(0, 0, 0, 0.7);
+  --text-light: #e0e0e0;
+  --text-muted: #b0b0b0;
+  --accent: #1e90ff; /* Tactical Blue */
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow: rgba(0, 0, 0, 0.8);
+  --font-family: 'Roboto', sans-serif;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Glass Effect */
+.glass {
+  background: var(--bg-glass);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px var(--shadow);
+  padding: 20px;
+  margin: 20px;
+}
+
+/* Navbar */
+nav {
+  background-color: var(--bg-darker);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 20px;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Cards */
+.card {
+  background-color: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--shadow);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.card h3, .card h5 {
+  color: var(--text-light);
+}
+
+.card p {
+  color: var(--text-muted);
+}
+
+/* Forms */
+input, textarea, select {
+  background-color: var(--bg-darker);
+  color: var(--text-light);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* Buttons */
+button {
+  background-color: var(--accent);
+  border: none;
+  border-radius: 5px;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #1c86ee;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.alert-info {
+  background-color: rgba(30, 144, 255, 0.1);
+  border: 1px solid rgba(30, 144, 255, 0.3);
+}
+
+.alert-success {
+  background-color: rgba(50, 205, 50, 0.1);
+  border: 1px solid rgba(50, 205, 50, 0.3);
+}
+
+.alert-warning {
+  background-color: rgba(255, 165, 0, 0.1);
+  border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+.alert-danger {
+  background-color: rgba(255, 69, 0, 0.1);
+  border: 1px solid rgba(255, 69, 0, 0.3);
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-darker);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

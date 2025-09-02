@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title%}Examples{% endblock%}
+
+{% block content %}
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
+	<div class="container-fluid py-5">
+		<h1 class="display-3 fw-bold">Flask Examples - Framework 221E</h1>
+		<code class="col-md-8 fs-4">This page contains the examples of flask app constructed in app.py</code>
+	</div>
+</div>
+<div class="card bg-dark p-2 mb-4">
+	<div class="card-header text-white">
+		<h1 class="card-title">Examples</h1>
+		<p class="text-success fw-bold">This is the current ongoing flask projects alongside thier links.</p>
+	</div>
+	<div class="card-body text-white">
+	<ul class="list-group">
+		{% for example in examples %}
+		<li class="list-group-item bg-dark text-info"><a class="nav-link" href="{{ url_for('show_example', example_name=example) }}"> {{ example|title }} </a></li>
+		{% else %}
+		<li class="list-group-item bg-dark text-danger"> No examples posted yet </li>
+		{% endfor %}
+	</ul>
+	</div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Profile - {{ profile_user.username }}{% endblock %}
+{% block content %}
+<div class="card glass p-4 mt-4">
+  <div class="d-flex justify-content-between">
+    <div>
+      <h3>{{ profile_user.realname or profile_user.username }}</h3>
+      <div class="small text-muted">{{ profile_user.username }} · {{ profile_user.job or '—' }} · {{ profile_user.age or '—' }}</div>
+      <p class="mt-2">{{ profile_user.bio or 'No bio' }}</p>
+      <div class="small text-muted">Joined {{ profile_user.created_at.strftime('%Y-%m-%d') }}</div>
+    </div>
+    <div>
+      {% if current_user.is_authenticated and current_user.id == profile_user.id %}
+        <a class="btn btn-sm btn-outline-light" href="{{ url_for('profile_edit', username=current_user.username) }}">Edit</a>
+        <form method="post" action="{{ url_for('account_delete') }}" style="display:inline">
+          <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete account and all content?')">Delete Account</button>
+        </form>
+      {% endif %}
+    </div>
+  </div>
+
+  <h5 class="mt-4">Posts by {{ profile_user.username }}</h5>
+  <div class="mt-2">
+    {% for post in posts %}
+      {% include "_post_card.html" %}
+    {% else %}
+      <div class="text-muted small">No posts yet.</div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

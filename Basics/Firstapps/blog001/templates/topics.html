@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Topics · Noir8 Blog{% endblock %}
+{% block content %}
+<div class="glass p-4">
+  <h1 class="h4 mb-3">All Topics</h1>
+  <div class="d-flex flex-wrap gap-2">
+    {% for t in topics %}
+      <a class="tag" href="{{ url_for('by_topic', slug=t.slug) }}">{{ t.name }}</a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

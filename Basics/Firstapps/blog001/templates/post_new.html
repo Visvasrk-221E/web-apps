@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}New Post · Noir8 Blog{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="glass p-4">
+      <h1 class="h4 mb-3">Publish post</h1>
+      <form method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+          <label class="form-label">Title</label>
+          {{ form.title(class="form-control", placeholder="Write a crisp title") }}
+          {% for e in form.title.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Topic</label>
+          {{ form.topic(class="form-select") }}
+          {% for e in form.topic.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Body</label>
+          {{ form.body(class="form-control", rows="10", placeholder="Your content (Markdown soon™)") }}
+          {% for e in form.body.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
+        </div>
+        {{ form.submit(class="btn btn-noir btn-noir-primary") }}
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+<div class="card glass _post_card mb-3">
+  <div class="d-flex justify-content-between align-items-start">
+    <div>
+      <h5>
+        <a href="{{ url_for('post_detail', post_id=post.id) }}" class="text-light">{{ post.title }}</a>
+      </h5>
+      <div class="meta-row">
+        <span>by <a href="{{ url_for('profile', username=post.author.username) }}">{{ post.author.username }}</a></span>
+        <span>· {{ post.created_at.strftime('%Y-%m-%d %H:%M') }}</span>
+        <span>· {{ post.topic.name }}</span>
+      </div>
+    </div>
+    <div class="text-end">
+      {% if current_user.is_authenticated and current_user.id == post.user_id %}
+        <a class="btn btn-sm btn-outline-light mb-1" href="{{ url_for('post_edit', post_id=post.id) }}">Edit</a>
+        <form method="post" action="{{ url_for('post_delete', post_id=post.id) }}" style="display:inline">
+          <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete post?')">Delete</button>
+        </form>
+      {% endif %}
+    </div>
+  </div>
+
+  <p class="mt-2 text-muted">
+    {{ post.body[:240] }}{% if post.body|length > 240 %}...{% endif %}
+  </p>
+
+  <a href="{{ url_for('post_detail', post_id=post.id) }}" class="btn btn-sm btn-outline-light">Read More</a>
+</div>

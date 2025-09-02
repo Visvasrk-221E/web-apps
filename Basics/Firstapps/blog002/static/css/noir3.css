@@ -1,0 +1,107 @@
+/* noir.css — Tactical CIA-style dark glass theme for Noir Blog */
+:root {
+  --bg: #050507; /* pitch dark background */
+  --glass: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.06);
+  --accent: #1e90ff; /* tactical blue highlight */
+  --text-light: #e8eef3;
+  --text-muted: rgba(255,255,255,0.6);
+  --card-radius: 12px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.6);
+  --font-main: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Base & Layout */
+* {box-sizing:border-box;}
+html, body {height:100%; margin:0; padding:0; background:var(--bg); color:var(--text-light); font-family:var(--font-main);}
+.noir-container {max-width:1200px; margin:2rem auto; padding:0 1rem;}
+
+/* Glass Panels / Cards */
+.card, .glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, border 0.3s ease;
+}
+
+.card:hover, .glass:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(8,12,18,0.95);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1rem 2rem;
+}
+.navbar a {color: var(--text-light); margin: 0 0.8rem; text-decoration: none; font-weight: 600;}
+.navbar a:hover {color: var(--accent);}
+
+/* Buttons */
+.btn, .btn-outline-light {
+  border-radius: var(--card-radius);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border: 1px solid var(--glass-border);
+  background: rgba(25,35,45,0.85);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+.btn:hover, .btn-outline-light:hover {
+  background: rgba(30,50,80,0.9);
+  border-color: var(--accent);
+}
+
+/* Links */
+a {color: var(--accent);}
+a:hover {text-decoration: underline;}
+
+/* Inputs / Forms */
+input, textarea, select {
+  background: rgba(20,25,30,0.9);
+  color: var(--text-light);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+  padding: 0.6rem 1rem;
+  font-family: var(--font-main);
+}
+input:focus, textarea:focus, select:focus {border-color: var(--accent); outline: none;}
+
+/* Post Card & Preview */
+.post_card, ._post_card, .card-glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.post_card h5, ._post_card h5 {color: var(--accent); margin-bottom: 0.5rem;}
+.post_card p, ._post_card p {color: var(--text-muted);}
+.meta-row {display:flex; gap:0.75rem; align-items:center; color:var(--text-muted); font-size:0.9rem;}
+
+/* Comments */
+textarea[name="comment"] {min-height:80px;}
+
+/* Footer */
+footer {background: rgba(8,12,18,0.95); text-align:center; padding:1rem 0; color: var(--text-muted); font-size:0.9rem;}
+
+/* Responsive */
+@media(max-width:767px){
+  .noir-container {padding:0 0.5rem;}
+  .post_card, ._post_card {padding:0.8rem;}
+}

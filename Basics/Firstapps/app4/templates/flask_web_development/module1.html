@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% import "macros.html" as ui %}
+
+{% block title %}Framework 221E - Courses|Flask Web Development|Module 1 - Introduction to Flask{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<div data-bs-theme="dark">
+
+<!-- the information panel -->
+<div class="container-fluid p-5 bg-black border text-white my-5">
+    <h1 class="display-4">Flask Web Development <br> Module 1 : Introduction to Flask</h1>
+    <code class="lead">Welcome to the learning path of Flask Dynamic Web Building Course : This is your module 1.</code><br>
+    <p class="lead">Discover more modules @ the module library of Flask Web Development</p>
+    <a href="{{ url_for('flask_web_development') }}" class="btn btn-primary btn-lg">Explore Modules</a>
+</div>
+
+<!-- introduction to flask -->
+<div class="card my-5 bg-nightshade text-white">
+  <div class="card-body">
+    <h3 class="card-title display-6">What is Flask?</h3>
+    <p class="card-text lead">Flask is a <strong> web framework for Python </strong> that lets you build websites and web applications without having to manually handle all the low-level details. On its own, Python doesn’t know how to respond to a browser request or serve a webpage, but Flask gives you the tools to do that. <strong>You write Python functions that are linked to specific URLs</strong>, and when someone visits that URL in their browser, <em>Flask runs the matching function and sends back whatever response</em> you decide — usually HTML, but it could also be JSON or plain text.</p>
+	<p class="card-text lead"> It’s called a <em>micro-framework</em> because it comes with only the essentials built in, leaving you free to add the extra tools and libraries you actually need. This makes it very lightweight and flexible. You can decide how your project is structured, which database to use, and how you want to style your pages. Since it’s built in Python, you can use the language you already know to control what happens on your site, from handling forms and logins to pulling data from a database or <strong>generating dynamic content</strong>.</p>
+	<p class="card-text lead">You can think of Flask as the kitchen of a restaurant. Each URL is like a menu item — when a customer orders it, the kitchen finds the right recipe, prepares it (using HTML templates and your Python logic), and serves it back to the table, which is the browser. That cycle — request in, response out — is the core of how Flask works.</p>
+    </p>
+  </div>
+</div>
+
+<!-- installation of flask -->
+<div class="card bg-black border my-5 text-white">
+	<div class="card-body">
+		<h1 class="card-title display-6"><b>Getting started with flask</b></h1>
+		<hr><br>
+		<h2 class="card-title text-muted"><b>Step 1 :</b> Installation of Flask </h2>
+		<p class="card-text lead">First you need flask in your terminal. <br> Make sure that you have python3 installed and in your terminal or command prompt, type the following:</p>
+		<!-- Installation terminal -->
+			{{ ui.terminal_card("pip3", "pip3 install flask") }}
+		<!-- Writing the first app -->
+		<br><hr><br>
+		<h2 class="card-title text-muted"><b>Step 2 :</b> Your First Flask App</h2>
+		<p class="card-text lead">Let's make the smallest web app in the world! <br> Create a file called <kbd>app.py</kbd> and put this inside:</p>
+
+{{ ui.terminal_card("python3", "from flask import Flask
+
+# create a Flask app object
+app = Flask(__name__)
+
+# define a route for homepage
+@app.route('/')
+def home():
+	return 'Hello, World from Flask!'
+
+# run the app
+if __name__ == '__main__':
+	app.run(debug=True)
+" ) }}
+	
+	<br><hr><br>
+    <h2 class="card-title text-muted"><b>Step 3 :</b> Understanding the Code</h2>
+	<p class="card-text lead">
+	<ol class="lead">
+		<li><kbd>from flask import Flask</kbd> : This means: “Hey Python, go get Flask so we can use it.”<br></li>
+		<li><kbd>app = Flask(__name__)</kbd> : Here we are making a new Flask App. Think of this like turning on a robot that will handle all requests.<br></li>
+		<li><kbd>@app.route("/")</kbd> : This is like telling Flask: “When someone visits the / link (the homepage), go to this function.”<br></li>
+		<li><kbd>def home():	return "Hello, World from Flask!"</kbd> : This is the function Flask calls. It sends the words Hello, World from Flask! back to the browser.<br></li>
+		<li><kbd>if __name__ == "__main__": app.run(debug=True)</kbd> : This means: “If I run this file, start the Flask robot on my computer, and let me test it.”<br></li>
+		<li><kbd>debug=True</kbd> : makes it super friendly — if you make a mistake, Flask shows you nice error messages.<br></li>
+	</ol>
+	</p>
+
+	<br><hr><br>
+    <h2 class="card-title text-muted"><b>Step 4 :</b> Running the Code</h2>
+	<p class="lead"> Now, in your terminal type the following as shown: </p>
+{{ ui.terminal_card('bash', 'python3 app.py') }}
+	<p class="lead"> You should now see something like : </p>
+{{ ui.terminal_card('txt', '* Running on http://127.0.0.1:5000/') }}
+	<p class="lead"> This means your app is alive and is running in the web browser. <br>Remember that this is only a localhost server app.<br>
+	Open your web browswer and type <kbd>http://127.0.0.1:5000/</kbd> in the search bar.<br>
+	You will be successfully redirected to your web page.
+
+	<br><hr><br>
+	<h2 class="card-title text-muted"><b>Step 5 :</b> Building More Pages</h2>
+	<p class="lead"> You can also add more web pages in the way we did earlier, for more details, see below tutorial to know how to do it. <br>In this below given example, you are adding an about page for your website.</p>
+{{ ui.terminal_card('python3', '@app.route("/about")
+def about():
+	return "This is the About page of our Flask website."
+') }}
+	<p class="lead"> Now, reload the page and visit <kbd>http://127.0.0.1:5000/about</kbd> to see your about page.<br><b> You have successfully created a mini website! </b> </p>
+
+	<br><hr><br>
+	<h2 class="card-title text-muted"><b>Final step of Module 1 :</b> Key Takeaways.</h2>
+	<p class="lead">
+	<b><ul class="lead">
+		<li>The first thing to understand is that Flask is a lightweight web framework in Python. It acts like a bridge between your Python code and the web browser. When you type a web address, your browser sends a request, and Flask decides which piece of Python code should answer. That Python function then sends back a response, often in the form of text or HTML, which the browser displays.</li>
+		<li>Setting up Flask is simple. With just one command, pip install flask, you bring Flask into your computer. From there, you can write a very small Python script — just a few lines long — and already have a working website running locally. This is what makes Flask so approachable; it removes unnecessary complexity and lets you see exactly how things connect.</li>
+		<li>The concept of routes is central to Flask. A route defines what happens when someone visits a specific link, such as / for the homepage or /about for an About page. You connect routes to functions in Python, and those functions decide what to return. This can be plain text, raw HTML, or even full HTML templates. Each route acts like a door, and the functions behind them are the rooms that hold the content.</li>
+		<li>Running a Flask app is like turning on a server in your own computer. Flask listens on a special address (by default, http://127.0.0.1:5000/) and serves whatever you define in your routes. With debug mode enabled, Flask also helps you catch mistakes quickly and reloads automatically whenever you change your code. This creates a smooth learning experience while you experiment.</li>
+		<li>In short, Flask gives you a direct, hands-on way to understand web development. You learn how requests and responses work, how pages are served, and how Python can powerfully control what a user sees. By starting simple — with routes returning text — you lay the foundation for building more advanced features like templates, forms, databases, and eventually a complete website.</li>
+	</b></ul>
+	</p>
+
+
+	<!-- Main div for this card ends here -->	
+	</div>
+</div>
+
+
+<!--end all content-->
+</div>
+{% endblock %}

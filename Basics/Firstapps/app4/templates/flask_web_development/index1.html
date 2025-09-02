@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Framework 221E - Courses | Flask Web Development{% endblock %}
+
+{% block content %}
+
+<div data-bs-theme="dark">
+
+	<!-- information panel -->
+	<div class="container-fluid p-5 bg-black border text-white my-5">
+		<h1 class="display-4">Flask Web Development</h1>
+		<code class="lead">Welcome to the learning path of Flask Dynamic Web Building Course</code><br>
+		<p class="lead">Discover more courses @ the course library of framework 221E</p>
+		<a href="{{ url_for('courses') }}" class="btn btn-primary btn-lg">Explore Courses</a>
+	</div>
+
+	<!-- introduction to flask web development course -->
+	<div class="card my-5 bg-dark text-white p-3">
+		<div class="card-header bg-black text-white">
+			<h1 class="card-title display-6"><b>Course Information</b></h1>
+		</div>
+		<div class="card-body">
+			<p class="card-text lead"><strong>“From Python scripts to full-fledged dynamic websites — building the web step by step with Flask.”</strong></p>
+			<p class="card-text lead">
+				The idea is simple: you already know Python and HTML, so this course’s mission is to guide you in connecting those two worlds. By the end, you’ll understand not just how to make a Flask app work, but also why it works that way.  
+				The course motto is about empowerment — learning to control every part of the web development process yourself, rather than relying on pre-built systems. Flask’s minimalism means you’ll see the inner workings: routing requests, rendering templates, handling forms, connecting databases, creating APIs, and finally deploying a live application.
+			</p>
+		</div>
+	</div>
+
+	<!-- course motto -->
+	<div class="card my-5 bg-dark text-white p-3">
+		<div class="card-header bg-black text-white">
+			<h1 class="card-title display-6"><b>Course Motto</b></h1>
+		</div>
+		<div class="card-body">
+			<p class="card-text lead">
+				<strong>Perfect — here’s the motto of our Flask Web Development Course in 5 clear points, each with a short explanation:</strong>
+			</p>
+			<ol class="lead">
+				<li><b>Learn by Building</b> – every concept will be tied to actually creating parts of a working web app, not just theory.</li>
+				<li><b>Start Simple, Grow Big</b> – begin with a single route returning text, then expand to full websites with multiple pages and features.</li>
+				<li><b>Understand the Core</b> – focus on the request–response cycle, routing, and templates so you see how the web really works.</li>
+				<li><b>Add Only What You Need</b> – learn Flask’s flexible “micro” style, adding databases, forms, or APIs step by step.</li>
+				<li><b>Deploy with Confidence</b> – finish with the knowledge to take your project online, moving from your computer to the real web.</li>
+			</ol>
+		</div>
+	</div>
+
+	<!-- modules -->
+	<div class="card my-5 bg-dark text-white">
+		<div class="card-body">
+			<h3 class="card-title">Modules</h3>
+			<p class="card-text">This is a prototype build website, which is used for learning and sharing of informations.</p>
+			<ol>
+				{% for module in modules %}
+					<li><a class="btn btn-outline-light" href="{{ url_for('show_flask_web_development_module', module_name=module) }}">{{ module|title }}</a></li>
+				{% else %}
+					<li>No modules are available currently</li>
+				{% endfor %}
+			</ol>
+		</div>
+	</div>
+
+</div>
+{% endblock %}

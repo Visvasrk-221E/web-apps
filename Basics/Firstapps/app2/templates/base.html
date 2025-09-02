@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+	<title>{% block title %}My Flask App{% endblock %}</title>
+</head>
+<body>
+	<nav>
+		<a href="/">Home</a> | <a href="/about">About</a> | <a href="/contact">Contact</a>
+	</nav>
+	<hr>
+	{% block content %}{% endblock %}
+
+</body>
+</html>

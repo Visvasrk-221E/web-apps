@@ -1,0 +1,134 @@
+/* =====================================================
+   noir.css — Dark Nightshade CIA Glass Theme
+   ===================================================== */
+
+/* BODY + GLOBAL */
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background: radial-gradient(circle at top left, #0d1b2a, #000814);
+  color: #e0e6ed;
+  line-height: 1.7;
+}
+
+/* NAVBAR */
+.navbar {
+  background: rgba(13, 27, 42, 0.7) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #5aa9e6 !important;
+}
+.navbar .nav-link {
+  color: #d8e3f0 !important;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+.navbar .nav-link:hover {
+  background: rgba(90, 169, 230, 0.1);
+  color: #5aa9e6 !important;
+}
+
+/* CARDS (bg-dark + border-secondary) */
+.card.bg-dark {
+  background: rgba(13, 27, 42, 0.65) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* TEXT COLORS */
+.text-light { color: #edf6f9 !important; }
+.text-muted { color: #8ca1b2 !important; }
+.text-info { color: #5aa9e6 !important; }
+
+/* BUTTONS */
+.btn-outline-light {
+  border: 1px solid #5aa9e6 !important;
+  color: #5aa9e6 !important;
+  border-radius: 0.6rem;
+  transition: all 0.25s ease;
+}
+.btn-outline-light:hover {
+  background: #5aa9e6 !important;
+  color: #0d1b2a !important;
+  box-shadow: 0 0 12px rgba(90, 169, 230, 0.6);
+}
+
+.btn-outline-danger {
+  border: 1px solid #d64550 !important;
+  color: #d64550 !important;
+  border-radius: 0.6rem;
+  transition: all 0.25s ease;
+}
+.btn-outline-danger:hover {
+  background: #d64550 !important;
+  color: #fff !important;
+  box-shadow: 0 0 12px rgba(214, 69, 80, 0.6);
+}
+
+/* FORMS */
+.form-control.bg-black, 
+.form-select.bg-black {
+  background: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #e0e6ed !important;
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.75rem;
+}
+.form-control:focus, 
+.form-select:focus {
+  border-color: #5aa9e6 !important;
+  box-shadow: 0 0 0 3px rgba(90, 169, 230, 0.25) !important;
+  outline: none !important;
+}
+
+/* ALERTS */
+.alert {
+  border-radius: 0.8rem;
+  backdrop-filter: blur(6px);
+  border: none;
+}
+.alert-info { background: rgba(90, 169, 230, 0.15); color: #5aa9e6; }
+.alert-success { background: rgba(56, 176, 90, 0.15); color: #38b05a; }
+.alert-warning { background: rgba(255, 193, 7, 0.15); color: #ffc107; }
+.alert-danger { background: rgba(214, 69, 80, 0.15); color: #d64550; }
+
+/* LINKS */
+a { color: #5aa9e6; text-decoration: none; }
+a:hover { color: #89c2d9; }
+
+/* HEADINGS */
+h1, h2, h3, h4, h5 {
+  color: #edf6f9;
+  font-weight: 600;
+}
+
+/* LIST GROUP (topics.html) */
+.list-group-item.bg-dark {
+  background: rgba(13, 27, 42, 0.65) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #e0e6ed !important;
+  transition: all 0.25s ease;
+}
+.list-group-item.bg-dark:hover {
+  background: rgba(90, 169, 230, 0.12) !important;
+  color: #5aa9e6 !important;
+}
+
+/* FOOTER (optional, if you add later) */
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.85rem;
+  color: #8ca1b2;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(13, 27, 42, 0.65);
+  backdrop-filter: blur(10px);
+  border-radius: 0.8rem 0.8rem 0 0;
+}

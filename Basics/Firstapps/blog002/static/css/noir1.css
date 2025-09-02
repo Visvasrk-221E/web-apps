@@ -1,0 +1,126 @@
+/* noir.css — CIA-style tactical dark theme */
+
+:root {
+  --bg-dark: #0a0f14;       /* deep night black-blue */
+  --bg-panel: rgba(15, 20, 25, 0.85); /* tactical glass panels */
+  --accent-blue: #2f6fad;   /* classified system blue */
+  --text-light: #d0d7df;    /* soft light text */
+  --text-muted: #7a8691;    /* muted gray-blue */
+  --border-line: rgba(60, 80, 100, 0.35);
+  --radius: 14px;
+  --shadow: 0 0 25px rgba(0,0,0,0.6);
+  --font-main: "Roboto Mono", "Consolas", monospace;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Card panels */
+.card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-blue);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin-bottom: 1rem;
+}
+
+/* Navigation */
+.navbar {
+  background: rgba(8, 12, 18, 0.95);
+  border-bottom: 1px solid var(--border-line);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: var(--accent-blue);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-line);
+  background: rgba(25, 35, 45, 0.8);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.btn:hover {
+  background: rgba(35, 55, 75, 0.9);
+  border-color: var(--accent-blue);
+}
+
+/* Inputs */
+input, textarea, select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin: 0.6rem 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-line);
+  background: rgba(20, 25, 30, 0.9);
+  color: var(--text-light);
+  font-family: var(--font-main);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent-blue);
+  outline: none;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  background: rgba(40, 60, 80, 0.6);
+  border-radius: var(--radius);
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  margin: 0.2rem;
+  color: var(--text-light);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-line);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

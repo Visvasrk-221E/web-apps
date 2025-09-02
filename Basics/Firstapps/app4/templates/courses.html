@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Courses{% endblock %}
+
+{% block content %}
+<div data-bs-theme="dark">
+
+<div class="container-fluid p-5 bg-black text-light my-5 border">
+    <h1 class="display-4">Our Courses</h1>
+    <code class="lead">We offer a variety of courses regarding information technology and vulnerability creation and manipulation.</code><br>
+    <p class="lead">Check out the courses we offer for the development of ideology of chaos inprintment and intelligence power.</p>
+    <a href="{{ url_for('home') }}" class="btn btn-primary btn-lg">Home</a>
+</div>
+
+<div class="card my-5 bg-dark text-light">
+  <div class="card-body">
+    <h3 class="card-title">Current courses</h3>
+    <p class="card-text">This is a prototype build website, which is used for learning and sharing of informations.</p>
+    <ol>
+    	{% for course in courses %}
+    	<li><a href="{{ url_for('show_course', course_name=course) }}" class="btn btn-outline-light">{{ course|title }}</a></li>
+    	{% else %}
+    	<li>No courses are available currently </li>
+    	{% endfor %}
+    </ol>
+  </div>
+</div>
+
+
+<!-- end all content -->
+</div>
+{% endblock %}

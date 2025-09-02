@@ -1,0 +1,12 @@
+<div class="card-glass p-3 h-100 d-flex flex-column">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <span class="tag">{{ post.topic.name }}</span>
+    <small class="link-muted">{{ post.created_at.strftime('%b %d, %Y') }}</small>
+  </div>
+  <a class="h5 mb-2 text-decoration-none" href="{{ url_for('post_detail', post_id=post.id) }}">{{ post.title }}</a>
+  <p class="flex-grow-1 link-muted">{{ post.body[:160] }}{% if post.body|length > 160 %}…{% endif %}</p>
+  <div class="d-flex justify-content-between align-items-center">
+    <small class="link-muted">by {{ post.author.username }}</small>
+    <a class="btn btn-noir btn-sm" href="{{ url_for('post_detail', post_id=post.id) }}">Read</a>
+  </div>
+</div>

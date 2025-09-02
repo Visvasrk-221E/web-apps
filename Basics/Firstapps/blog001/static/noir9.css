@@ -1,0 +1,67 @@
+/* assets/css/style.css
+   Shared dark, glassy, CIA-style theme for Octagon
+*/
+:root{
+  --bg:#050507;
+  --glass: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.06);
+  --accent: #7bd389;
+  --muted: rgba(255,255,255,0.62);
+  --card-radius: 12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;background:var(--bg);color:#e8eef3;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+a {text-decoration:none}
+.container-max{max-width:1200px}
+
+/* Background video wrapper (home page) */
+.bg-video-wrap{position:fixed;inset:0;z-index:-2;overflow:hidden;height:100vh;width:100vw}
+.bg-video-wrap video{min-width:100%;min-height:100%;object-fit:cover;filter:brightness(.44)contrast(.9)}
+
+/* Overlay */
+.bg-overlay{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg, rgba(2,6,23,0.65), rgba(4,8,15,0.82))}
+
+/* Glass card */
+.glass{
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:var(--card-radius);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Navbar */
+.navbar-dark .navbar-nav .nav-link{color:rgba(255,255,255,0.75)}
+.navbar-dark .navbar-brand{font-weight:700;letter-spacing:1px}
+
+/* Hero */
+.hero{min-height:78vh;display:flex;align-items:center}
+.hero h1{font-weight:800;letter-spacing:1px}
+.lead-muted{color:var(--muted)}
+
+/* Cards */
+.card-glass{background:transparent;border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:1rem}
+.card-title{font-weight:700}
+.small-muted{color:var(--muted);font-size:.95rem}
+
+/* Ticker */
+.ticker{overflow:hidden;white-space:nowrap}
+.ticker .track{display:inline-block;padding-left:100%;animation:newsScroll 28s linear infinite}
+@keyframes newsScroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+
+/* Document preview iframe */
+.doc-iframe{width:100%;height:65vh;border:0;border-radius:8px;}
+
+/* Utilities */
+.badge-accent{background:rgba(123,211,137,0.12);color:var(--accent);border:1px solid rgba(123,211,137,0.12)}
+.time-stamp{color:var(--muted);font-size:.92rem}
+.footer{opacity:.9}
+.meta-row{display:flex;gap:.75rem;align-items:center;color:var(--muted);font-size:.92rem}
+
+/* Responsive */
+@media (max-width:767px){
+  .hero{min-height:56vh}
+  .doc-iframe{height:50vh}
+}

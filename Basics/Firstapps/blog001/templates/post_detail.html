@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }} · Noir8 Blog{% endblock %}
+{% block content %}
+<div class="row g-4">
+  <div class="col-lg-8">
+    <article class="glass-strong">
+      <div class="mb-2"><span class="tag">{{ post.topic.name }}</span></div>
+      <h1 class="h3">{{ post.title }}</h1>
+      <div class="mb-3 small link-muted">
+        by {{ post.author.username }} · {{ post.created_at.strftime('%b %d, %Y %H:%M') }}
+      </div>
+      <div class="fs-6" style="white-space: pre-wrap;">{{ post.body }}</div>
+    </article>
+
+    <section class="mt-4 glass p-3">
+      <h5 class="mb-3">Comments ({{ post.comments.count() }})</h5>
+
+      {% if current_user.is_authenticated %}
+        <form method="post" class="mb-4">
+          {{ form.hidden_tag() }}
+          <div class="mb-2">
+            {{ form.body(class="form-control", rows="3", placeholder="Write a comment…") }}
+            {% for e in form.body.errors %}
+              <div class="text-danger small">{{ e }}</div>
+            {% endfor %}
+          </div>
+          {{ form.submit(class="btn btn-noir btn-noir-primary") }}
+        </form>
+      {% else %}
+        <div class="alert alert-dark">Login to comment.</div>
+      {% endif %}
+
+      <div class="vstack gap-3">
+        {% for c in comments %}
+          <div class="p-3 card-glass">
+            <div class="small link-muted mb-1">
+              {{ c.author.username }} · {{ c.created_at.strftime('%b %d, %Y %H:%M') }}
+            </div>
+            <div style="white-space: pre-wrap;">{{ c.body }}</div>
+          </div>
+        {% else %}
+          <div class="text-muted">Be the first to comment.</div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="glass p-3">
+      <div class="terminal mb-3">
+        <div class="terminal-header">
+          <div class="dots">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+          </div>
+          <div class="terminal-lang">FLASK</div>
+        </div>
+        <div class="terminal-body"><pre>
+$ curl -s {{ request.url }} | more
+# cyber-glass mode engaged_</pre></div>
+      </div>
+      <a class="btn btn-noir w-100"
+         href="{{ url_for('by_topic', slug=post.topic.slug) }}">
+         More in {{ post.topic.name }}
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
