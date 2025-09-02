@@ -16,6 +16,15 @@ def root():
 def home():
 	return render_template('index.html')
 
+@app.route('/is_admin/<username>')
+def is_admin(username):
+	admins = ["Visvasrk", "visvasrk", "visvasrk001", "Visvasrk001", "Visvasrk221e", "visvasrk221e", "Visvasrk-221E"]
+	if username in admins:
+		return f"<h1>Yes, {username} is an admin of Framework 221E</h1>"
+	else:
+		return f"<h1>No, {username} is not admin of this project</h1>"
+
+
 # Define the about
 @app.route('/about')
 def about():
