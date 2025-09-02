@@ -6,6 +6,7 @@ from flask import Flask, render_template, redirect, url_for
 app = Flask(__name__)
 
 # Create the root to redirect to home
+
 @app.route('/')
 def root():
 	return redirect(url_for('home'))
