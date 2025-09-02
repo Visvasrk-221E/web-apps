@@ -48,7 +48,7 @@ def show_course(course_name):
 
 @app.route('/courses/flask_web_development')
 def flask_web_development():
-	available_modules=['module1']
+	available_modules=['module1', 'module2']
 	return render_template('flask_web_development/index.html', modules=available_modules)
 
 @app.route('/courses/flask_web_development/<module_name>')
@@ -59,6 +59,10 @@ def show_flask_web_development_module(module_name):
 def fwd_module_1():
 	return render_template('flask_web_development/module1.html')
 
+@app.route('/courses/flask_web_development/module2')
+def fwd_module_2():
+	return render_template('flask_web_development/module2.html')
+
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(debug=False)

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% import "macros.html" as ui %}
+
+{% block title %}Framework 221E - Courses|Flask Web Development|Module 1 - Introduction to Flask{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<div data-bs-theme="dark">
+
+<!-- the information panel -->
+<div class="container-fluid p-5 bg-black border text-white my-5">
+    <h1 class="display-4">Flask Web Development <br> Module 2 : Basics of Flask Routing</h1>
+    <code class="lead">Welcome to the learning path of Flask Dynamic Web Building Course : This is your module 2.</code><br>
+    <p class="lead">Discover more modules @ the module library of Flask Web Development</p>
+    <a href="{{ url_for('flask_web_development') }}" class="btn btn-primary btn-lg">Explore Modules</a>
+</div>
+
+<!-- introduction to flask -->
+
+
+<hr>
+<div class="container bg-black py-5">
+<a href="{{ url_for('fwd_module_1') }}" class="btn btn-outline-info btn-lg" style="float:left;">Go to Module 1</a>
+<a href="#" class="btn btn-outline-success btn-lg" style="float:right;">Go to Module 3</a>
+<br>
+</div>
+<br>
+
+<!--end all content-->
+</div>
+{% endblock %}
