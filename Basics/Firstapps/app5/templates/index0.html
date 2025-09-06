@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework-221E</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cryo.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="framework-version:221e" content="build:prototype0.1">
+</head>
+<!-- Body Starts Here -->
+<body>
+<!-- Start Main Content -->
+
+
+    
+<!------------------------------------------------->
+
+<!-- start cursor -->
+<div class="Noise Overlay"></div>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<!-- end cursor -->
+
+<!-- start header -->
+<header>
+    <!-- start container -->
+    <div class="container">
+        <!-- logo -->
+        <div class="logo">
+            <span class="logo-text">Framework<span class="accent">-221E</span></span>
+        </div>
+        <!-- end logo -->
+        <!-- nav -->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Debriefs</a></li>
+            </ul>
+        </nav>
+        <!-- end nav -->
+        <!-- theme toggle -->
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+        <!-- end theme toggle -->
+    <!-- end container -->
+    </div>
+<!-- end header -->    
+</header>
+<!-- start main -->
+<main>
+        <!-- hero section -->
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="glitch" data-text="Framework-221E">Framework-221E</h1>
+                    <div class="typewriter">
+                        <span id="typewriter-text"></span>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                    <p class="hero-description">Welcome to the world! This is a place where reality is manufactured for the sake of social good.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn primary">Projects</a>
+                        <a href="#contact" class="btn secondary">Contact Us</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-button close"></span>
+                                <span class="terminal-button minimize"></span>
+                                <span class="terminal-button maximize"></span>
+                            </div>
+                            <div class="terminal-title">system status</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="line"><span class="prompt">shellcode:~$</span><span class="command">sudo server status</span></div>
+                            <div class="ascii-art">
+        .--.          Neofetch
+    .---|__|          -----------
+.--|===|--|_         OS: Arch Linux
+|  |===|  |'\        Languages: Go, Python, C#
+|%%|   |  |.'\       Projects: Altbot, Lexido 
+|%%|   |  |\.'\      Community: fuzzies.wtf
+|  |   |  | \.'|     
+|  |   |__|  \.'\    "You might have to edit
+|  |===|--|   \.'\    Section definitions in js."
+^--^---'--'    `-'</div>
+                            <div class="line"><span class="prompt">shellcode:~$</span><span class="command blink"> _</span></div>
+                        </div>
+                    </div>
+                </div>          
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <div class="arrow">
+                        <br><br><br>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+        </section>
+            
+    <!-- about section -->
+    <section id="about">
+        
+    </section>
+    <!-- projects section -->
+    <section id="projects">
+        
+    </section>
+    <!-- skills section -->
+    <section id="skills">
+        
+    </section>
+    <!-- contact section -->
+    <section id="contact">
+        
+    </section>
+<!-- end main -->    
+</main>
+
+
+<!------------------------------------------------->
+
+
+
+<!-- Script Content Starts Here -->               
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="{{ url_for('static', filename='cryo.js') }}"></script>
+<!-- Script Ends Here -->
+<!-- Body Ends Here -->
+</body>
+</html>

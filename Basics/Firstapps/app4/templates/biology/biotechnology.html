@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Biotechnology{% endblock %}
+{% block content %}
+<!-- hero section -->
+<section id="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="text-primary">Biotechnology</h1>
+            <div class="typewriter" style="display:none;">
+                <span id="typewriter-text"></span>
+                <span class="cursor-blink">|</span>
+	        </div>
+            <p class="hero-description">The integration of natural science and organisms, cells, parts thereoff, and molecular analogues for products and services is known as biotechology.</p>
+            <div class="hero-buttons">
+                <a href="{{ url_for('biology') }}#projects" class="btn primary">Explore Topics</a>
+            </div>
+        </div>
+    </div>
+	<div class="scroll-indicator">
+    	<div class="mouse">
+        	<div class="wheel"></div>
+        </div>
+        <div class="arrow">
+	        <span></span>
+    	    <span></span>
+        </div>
+    </div>
+</section>
+            
+<!-- about section : Introduction part --> 
+<section id="about">
+	<div class="container">
+		<div class="section-header">
+			<h2> Introductio<span class="accent">n</span></h2>
+			<div class="section-line"></div>
+		</div>
+		<div class="about-content">
+			<div class="about-text">
+				<h3> Definition as per EFB(European Federation of Botechnology) </h3>
+				<p> Biotechnology deals with the techniques of using live organisms or enzymes from organisms to produce products and processes that are useful to humans. 
+				It gave a definition which encompasses both the traditional view as well as the modern molecular biology. </p>
+				<p><b>"The integration of natural science and organisms, cells, parts thereof, and molecular analogues for products and services is known as biotechnology."</b>
+				<br><b> Examples of Biotechnology : </b>
+					<ul>
+						<li>In sense all microbe mediated processes, making of curd, bread, wine could also be thought of biotech, but presently it is used in restricted sense.</li>
+						<li>Only those processes which use GMO(Genetically Modified Organisms) to achieve large scale production of biotech products are so considered into definition.</li>
+						<li>In vitro fertilisation, ie test tube baby</li>
+						<li>Synthesising a gene and using it</li>
+						<li>Developing a vaccine against a viral disease and using it</li>
+						<li>Correcting a defective gene...</li>
+						<li><em>All the above mentioned are part of biotech</em></li>
+					</ul>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="biotechprinciples">
+	<div class="container">
+		<div class="section-header">
+			<h2>Principles of<span class="accent"> Biotechnology</span></h2>
+			<div class="section-line"></div>
+		</div>
+		<div class="about-content">
+			<div class="about-text">
+				<h3>Two core biotech techniques that enabled birth of modern biotechnology.</h3>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- projects section -->
+<section id="projects" style="display:none;"></section>
+<!-- skills section -->
+<section id="skills" style="display:none;"></section>
+<!-- contact section -->
+<section id="contact" style="display:none;"></section>
+
+{% endblock %}

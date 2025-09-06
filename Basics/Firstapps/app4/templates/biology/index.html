@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}Biology{% endblock %}
+{% block content %}
+
+<section id="hero">
+<div class="container">
+	<div class="hero-content">
+		<h1 class="text-primary" data-text="Biology">Biology</h1>
+		<div class="typewriter" style="display:none;"> <!-- set display none for structure maintainence-->
+			<span id="typewriter-text"></span>
+			<span class="cursor-blink">|</span>
+		</div>
+		<p class="hero-description">Learning biology helps you to understand how living systems work and how to survive in
+		this world alongside with the million other organisms with which we share this planet with. The more you know, the 
+		more you will be able to cure yourself by understanding your own biology and threats you are facing. Self reliance is 
+		no longer a pre-independent slogan, it is an essential tool for survival.
+		</p>
+		<div class="hero-buttons">
+			<a href="{{ url_for('home') }}" class="btn primary">Home</a>
+			<a href="{{ url_for('home') }}#contact" class="btn secondary">Contact Us</a>
+		</div>
+	</div>
+</div>
+<div class="scroll-indicator">
+    <div class="mouse">
+        <div class="wheel"></div>
+    </div>
+    <div class="arrow">
+    	<span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+</section>
+<section id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>Subject <span class="accent">Description</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+            	<p>Framework 221E offers a complete learning program for Class 12 CBSE Biology, designed for students preparing 
+            	for board examinations and competitive entrance tests. The course covers the full NCERT syllabus with detailed 
+            	explanations, diagrams, and practice material.<p>
+            	<p>The course combines conceptual clarity with applied problem-solving, ensuring students not only 
+            	prepare for exams but also develop a deeper understanding of life sciences. Regular assessments, revision modules, 
+            	and question bank practice are included to strengthen learning outcomes.</p>
+                <div class="about-quote">
+                    <blockquote>"Doctor is not the only possibility with the knowledge of biology!"</blockquote>
+                </div>
+            </div>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-link"></i></div>
+                    <div class="stat-number" data-count="{{ topic_count }}">0</div>
+                    <div class="stat-label">Topics</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-book"></i></div>
+		            <div class="stat-number" data-count="0">0</div>
+                    <div class="stat-label">Documents</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- the topics -->
+<section id="projects">
+    <div class="container">
+        <div class="section-header">
+            <h2>Topics <span class="accent">Available</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="projects-grid">
+        {% for topic, description in topics.items() %}
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>{{ topic|title }}</h3>
+                    <div class="project-stats">
+                        <span class="project-stat"><i class="fas fa-dna"></i> Grade 12 </span>
+                    </div>
+                    <p>{{ description }}</p>
+                    <div class="project-links">
+                        <a href="{{ url_for('biology_topic', topic=topic) }}" class="project-link"><i class="fas fa-external-link-alt"></i> View It</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Intentionally hidden to preserve the javascript functionality and content-->
+
+<section id="projects" style="display:none;"></section>
+<section id="skills" style="display:none;"></section>
+<section id="contact" style="display:none;"></section>
+{% endblock %}
